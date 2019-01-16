@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="example.css">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1> BENING MUSTIKA </h1>
+    <p> "As She Walks Through The Wilderness And The Journey Begins.." </p>
+    <img src="matthew-henry-115712-unsplash.jpg" alt="this is a cute photo of dogs">
+<aside role="article" class="languages">
+<div id="tabContainer">
+  <div id="tabs">
+    <ul>
+      <li id="tab1"><a href="#tabPanel1">who we are</a></li>
+      <li id="tab2"><a href="#tabPanel2">How it Works</a></li>
+      <li id="tab3"><a href="#tabPanel3">Pricing</a></li>
+    </ul>
+  </div>
+  <div id="containers">
+    <div id="tabPanel1">
+    <h2> Who We are. </h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="tabPanel2">
+    <h2> How it Works </h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="tabPanel3">
+    <h2> Pricing </h2>
+    <li> Puppy Love - $9.99/mo. </li>
+    <li> Ultimate Pup - $19.99/mo. </li>
+    <li> 101 Dalmations - $101/annual </li>
+  </div>
+    <a href="https://www.linkedin.com/in/bening-m-41425010b/" target="_blank">
+      <button type="button" name="button">Linkedin</button></a>
+<script type="text/javascript">
+//tabbed panels
+// declare globals to hold all the links and all the panel elements
+var tabLinks;
+var tabPanels;
+  window.onload = function(){
+    // when the page loads, grab the li elements
+    tabLinks =
+  document.getElementById("tabs").getElementsByTagName("li");
+  // Now get all the tab panel container divs
+  tabPanels =
+  document.getElementById("containers").getElementsByTagName("div");
+  // activate the _first_ one
+  displayPanel(tabLinks[0]);
+
+  //attach event listener to links using onclick and onfocus,
+  fire the displayPanel function, return false to disable the link
+  for (var i = 0; i < tabLinks.length; i++) {
+    tabLinks[i].onclick = function(){
+      displayPanel(this);
+      return false;
+    }
+    tabLinks[i].onfocus = function(){
+      displayPanel(this);
+      return false;
+    }
+  }
+  }
+
+  function displayPanel ("tabToActivate") {
+//go through all the <li>
+for (var i = 0; i< tabLinks.length; i++){
+  if (tabLinks[i] == tabToActivate){
+    //if it's the one to activate, change its class
+    tabLinks[i].classList.add("activate");
+    // and display the corresponding panel
+    tabPanels[i].style.display = "block";
+  } else {
+// remove the active class on the link
+tabLinks[i].classList.remove("active");
+//hide the panel
+tabPanels[i].style.display = "none";
+  }
+}
+
+  }
+  </script>
+  </body>
+</html>
